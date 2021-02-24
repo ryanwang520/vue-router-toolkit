@@ -1,8 +1,7 @@
 import { getCurrentInstance, reactive, watch } from 'vue-demi';
-// @ts-expect-error
-import { Route } from 'vue-router';
+import Router, { Route } from 'vue-router';
 
-const useRoute = () => {
+const useRoute = (): Route => {
   const vm = getCurrentInstance()!;
   const route = reactive({ ...vm.proxy.$route });
 
@@ -13,10 +12,10 @@ const useRoute = () => {
     }
   );
 
-  return route;
+  return route as any;
 };
 
-const useRouter = () => {
+const useRouter = (): Router => {
   const vm = getCurrentInstance()!;
   return vm.proxy.$router;
 };
