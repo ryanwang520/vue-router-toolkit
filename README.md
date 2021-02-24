@@ -69,12 +69,12 @@ const params = useQueryParams({ user: UserSerializer });
 params.user; // type User
 ```
 
-## Composables for _Vue 2_
+## Composables for both _Vue 2_ and _Vue 3_,
 
 ```ts
-// for Vue 2 project, access to `Route` and `Router` object in `setup` function.
 import { useRoute, useRouter } from 'vue-router-tk';
 
-// for Vue 3 project, just import from 'vue-router' itself
-import { useRoute, useRouter } from 'vue-router';
+const route = useRoute();
+const router = useRouter();
+// route and router would be the corresponding type for that specific version
 ```
