@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { useRoute, useRouter } from './route';
 
 type ParamType<T = any> =
-  | { decode(value: string | null): T; encode(value: any): string }
+  | { decode(value: string | null): T | null; encode(value: any): string }
   | Constructor<T>
   | { (): T };
 export { ParamType };
@@ -11,7 +11,7 @@ export { ParamType };
 type Constructor<T> = { new (...args: any[]): T & Record<string, unknown> };
 
 type Serializer<T> = {
-  decode(value: string | null): T;
+  decode(value: string | null): T | null;
   encode(value: T): string;
 };
 const StringArray: Serializer<string[]> = {
