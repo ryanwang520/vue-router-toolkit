@@ -1,4 +1,4 @@
-import { computed, reactive } from 'vue-demi';
+import { computed, reactive, UnwrapRef } from 'vue-demi';
 import dayjs from 'dayjs';
 import { useRoute, useRouter } from './route';
 
@@ -40,11 +40,11 @@ const NumberArray: Serializer<number[]> = {
 type InferPropType<P = any> = P extends typeof Date
   ? Date
   : P extends Serializer<infer R>
-  ? R | undefined
+  ? R | null
   : P extends ParamType<infer T>
   ? unknown extends T
     ? any
-    : T | undefined
+    : T | null
   : any;
 
 type InferProps<P extends Record<string, any>> = {
@@ -110,7 +110,13 @@ function useQueryParams<Props extends Record<string, ParamType>>(
   return data;
 }
 
-function useSearch<Props extends Record<string, InferPropType>>(params: Props) {
+function useSearch<Props extends Record<string, InferPropType>>(
+  params: Props
+): {
+  reset(): void;
+  search(): void;
+  filters: UnwrapRef<InferProps<Props>>;
+} {
   const route = useRoute();
   const router = useRouter();
   const filters = reactive<InferProps<Props>>(
