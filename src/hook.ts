@@ -40,11 +40,11 @@ const NumberArray: Serializer<number[]> = {
 type InferPropType<P = any> = P extends typeof Date
   ? Date
   : P extends Serializer<infer R>
-  ? R | null
+  ? R | undefined
   : P extends ParamType<infer T>
   ? unknown extends T
     ? any
-    : T | null
+    : T | undefined
   : any;
 
 type InferProps<P extends Record<string, any>> = {

@@ -1,7 +1,17 @@
 import { getCurrentInstance, reactive, watch } from 'vue-demi';
 import Router, { Route } from 'vue-router';
+type Merge<F, S> = {
+  [P in keyof F | keyof S]: P extends keyof S
+    ? S[P]
+    : P extends keyof F
+    ? F[P]
+    : never;
+};
 
-const useRoute = (): Route => {
+const useRoute = (): Merge<
+  Route,
+  { query: Record<string, string | undefined> }
+> => {
   const vm = getCurrentInstance()!;
   const route = reactive({ ...vm.proxy.$route });
 
