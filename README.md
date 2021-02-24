@@ -25,7 +25,7 @@ filters.mobile; // string|undefined
 filters.name = 'newname'; //
 filters.mobile = '121';
 
-search(); // query name and mobile would be updated ?name=newname&mobile=121&page=1
+search(); // set page to 1, with query name and mobile updated. ?name=newname&mobile=121&page=1
 
 reset(); // reset filters to empty so filters.name == '' and filters.mobile == ''
 ```
@@ -69,7 +69,7 @@ const params = useQueryParams({ user: UserSerializer });
 params.user; // type User
 ```
 
-## Composables for `Vue 2`
+## Composables for _Vue 2_
 
 ```ts
 // for Vue 2 project, access to `Route` and `Router` object in `setup` function.
