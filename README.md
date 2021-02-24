@@ -25,7 +25,7 @@ filters.mobile; // string|undefined
 filters.name = 'newname'; //
 filters.mobile = '121';
 
-search(); // query name and mobile would be updated ?name=newname&mobile=121
+search(); // query name and mobile would be updated ?name=newname&mobile=121&page=1
 
 reset(); // reset filters to empty so filters.name == '' and filters.mobile == ''
 ```
