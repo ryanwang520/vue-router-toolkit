@@ -68,3 +68,13 @@ const UserSerializer: Serializer<User> = {
 const params = useQueryParams({ user: UserSerializer });
 params.user; // type User
 ```
+
+## Composables for `Vue 2`
+
+```ts
+// for Vue 2 project, access to `Route` and `Router` object in `setup` function.
+import { useRoute, useRouter } from 'vue-router-tk';
+
+// for Vue 3 project, just import from 'vue-router' itself
+import { useRoute, useRouter } from 'vue-router';
+```
