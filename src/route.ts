@@ -1,4 +1,6 @@
 import { getCurrentInstance, reactive, watch } from 'vue-demi';
+// @ts-expect-error
+import { Route } from 'vue-router';
 
 const useRoute = () => {
   const vm = getCurrentInstance()!;
