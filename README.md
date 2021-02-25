@@ -1,4 +1,4 @@
-# vue-router-tk
+# vuer-router-toolkit
 
 Tookit for `vue-router`, _Vue 2_ and _Vue 3_ compatible.
 
@@ -7,7 +7,7 @@ Tookit for `vue-router`, _Vue 2_ and _Vue 3_ compatible.
 `useQueryParams` for easy sync _query string_ with local state, providing reasonable typing base on config object.
 
 ```ts
-import { useQueryParams } from 'vue-router-tk';
+import { useQueryParams } from 'vuer-router-toolkit';
 const params = useQuerParams({ a: String, b: Number, c: Date });
 params.a; // string | undefined
 params.b; // number | undefined
@@ -17,7 +17,7 @@ params.c; // Date | undefined
 `useSearch` for handling search form state.
 
 ```ts
-import { useSearch } from 'vue-router-tk';
+import { useSearch } from 'vuer-router-toolkit';
 const { filters, reset, search } = useSearch({ name: String, mobile: String });
 filters.name; // string | undefined
 filters.mobile; // string|undefined
@@ -33,7 +33,7 @@ reset(); // reset filters to empty so filters.name == '' and filters.mobile == '
 ## Type helpers.
 
 ```ts
-import { ParamType, StringArray, NumberArray } from 'vue-router-tk';
+import { ParamType, StringArray, NumberArray } from 'vuer-router-toolkit';
 const params = useQueryParams({
   name: String as ParamType<'li'>,
   tags: StringArray,
@@ -47,7 +47,7 @@ params.ids = [1, 2, 3]; // ?ids=1,2,3
 Custom field config.
 
 ```ts
-import { Serializer } from 'vue-router-tk';
+import { Serializer } from 'vuer-router-toolkit';
 
 type User = {
   name: string;
@@ -72,7 +72,7 @@ params.user; // type User
 ## Composables for both _Vue 2_ and _Vue 3_,
 
 ```ts
-import { useRoute, useRouter } from 'vue-router-tk';
+import { useRoute, useRouter } from 'vuer-router-toolkit';
 
 const route = useRoute();
 const router = useRouter();
