@@ -1,4 +1,4 @@
-# vuer-router-toolkit
+# vue-router-toolkit
 
 Tookit for `vue-router`, _Vue 2_ and _Vue 3_ compatible.
 
