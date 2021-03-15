@@ -37,6 +37,18 @@ const NumberArray: Serializer<number[]> = {
   },
 };
 
+const DateTime: Serializer<Date> = {
+  decode(value): Date | null {
+    if (!value) {
+      return null;
+    }
+    return dayjs(value, 'YYYY-MM-DD HH:mm:ss').toDate();
+  },
+  encode(value: Date) {
+    return dayjs(value).format('YYYY-MM-DD HH:mm:ss');
+  },
+};
+
 type InferPropType<P = any> = P extends typeof Date
   ? Date
   : P extends Serializer<infer R>
@@ -159,4 +171,11 @@ function useSearch<Props extends Record<string, InferPropType>>(
   return { filters, reset, search };
 }
 
-export { useQueryParams, useSearch, NumberArray, StringArray, Serializer };
+export {
+  useQueryParams,
+  useSearch,
+  NumberArray,
+  StringArray,
+  Serializer,
+  DateTime,
+};
