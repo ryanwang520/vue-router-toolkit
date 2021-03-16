@@ -73,7 +73,7 @@ function getValue(value: string | null, type: InferPropType) {
   if (type == Boolean) {
     return value && ['1', 'true'].includes(value);
   }
-  if ('decode' in type) {
+  if (type && 'decode' in type) {
     return type['decode'](value);
   }
   return value;
