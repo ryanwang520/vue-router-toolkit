@@ -91,7 +91,7 @@ function setValue(value: unknown, type: ParamType) {
       ? dayjs(value).format('YYYY-MM-DD')
       : null;
   }
-  if ('encode' in type) {
+  if (type && 'encode' in type) {
     return type['encode'](value);
   }
   return value;
