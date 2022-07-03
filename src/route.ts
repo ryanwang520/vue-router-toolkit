@@ -1,4 +1,4 @@
-import { getCurrentInstance, reactive, watch } from 'vue-demi';
+import { getCurrentInstance, reactive, watch } from 'vue';
 import Router, { Route } from 'vue-router';
 type Merge<F, S> = {
   [P in keyof F | keyof S]: P extends keyof S

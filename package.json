@@ -1,5 +1,5 @@
 {
-  "version": "0.0.5",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "sideEffects": false,
@@ -18,22 +18,18 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "prepare": "tsdx build"
   },
   "dependencies": {
-    "dayjs": "^1.10.4",
-    "vue-demi": "^0.4.5"
+    "dayjs": "^1.10.4"
   },
   "devDependencies": {
     "tsdx": "^0.14.1",
-    "vue": "^2.6.0",
-    "vue-router": "^3.5.1",
-    "@vue/composition-api": "^1.0.0-rc.2"
+    "vue": "^2.7.0",
+    "vue-router": "^3.5.1"
   },
   "peerDependencies": {
-    "vue": "^2.6.0 || >=3.0.0",
+    "vue": "^2.7.0 || >=3.0.0",
     "vue-router": "^3.5.1 || >= 4.0.0"
   },
   "husky": {

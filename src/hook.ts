@@ -1,4 +1,4 @@
-import { computed, reactive, UnwrapRef } from 'vue-demi';
+import { computed, reactive, UnwrapRef } from 'vue';
 import dayjs from 'dayjs';
 import { useRoute, useRouter } from './route';
 
@@ -141,9 +141,7 @@ function useSearch<Props extends Record<string, InferPropType>>(
     const newQuery = {
       ...route.query,
     };
-    // @ts-expect-error
     Object.keys(filters).forEach(key => {
-      // @ts-expect-error
       if (!filters[key]) {
         delete newQuery[key];
       } else {
@@ -168,6 +166,7 @@ function useSearch<Props extends Record<string, InferPropType>>(
     search();
   };
 
+  // @ts-expect-error
   return { filters, reset, search };
 }
 
